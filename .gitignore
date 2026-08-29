@@ -1,0 +1,10 @@
+.env*
+*.key
+*.pem
+.output
+.wxt
+node_modules
+reports
+test-results
+playwright-report
+secrets

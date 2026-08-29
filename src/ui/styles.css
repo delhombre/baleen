@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  --color-deep-navy: oklch(0.18 0.04 250);
+  --color-surface: oklch(0.23 0.04 250);
+  --color-surface-raised: oklch(0.28 0.045 250);
+  --color-border: oklch(0.42 0.04 250);
+  --color-text-primary: oklch(0.97 0.02 250);
+  --color-text-muted: oklch(0.78 0.04 250);
+  --color-accent-cyan: oklch(0.84 0.15 195);
+  --color-accent-cyan-strong: oklch(0.74 0.16 195);
+  --color-success: oklch(0.78 0.16 150);
+  --color-danger-coral: oklch(0.75 0.16 25);
+  --color-unknown-neutral: oklch(0.72 0.03 250);
+  background: var(--color-deep-navy);
+  color: var(--color-text-primary);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-deep-navy);
+}
+
+main {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid var(--color-accent-cyan);
+  outline-offset: 3px;
+}
+
+.options-page {
+  max-width: 40rem;
+  margin-inline: auto;
+  background: var(--color-deep-navy);
+}
+
+.options-page :where(button, input, select, textarea) {
+  min-height: 44px;
+}
+
+.options-page :where(input, select, textarea) {
+  font-size: 1rem;
+}
+
+.options-panel {
+  color: var(--color-text-primary);
+}
+
+.options-sensitive-zone {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.options-status {
+  border-color: var(--color-border);
+  background: var(--color-surface-raised);
+  color: var(--color-text-muted);
+}
+
+.options-primary-action {
+  border: 1px solid var(--color-accent-cyan);
+  background: var(--color-accent-cyan);
+  color: var(--color-deep-navy);
+}
+
+.options-primary-action:hover {
+  background: var(--color-text-primary);
+}
+
+.options-provider-link {
+  color: var(--color-accent-cyan);
+}
+
+.options-provider-link[aria-disabled="true"] {
+  cursor: wait;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.options-danger-action {
+  border-color: color-mix(in oklch, var(--color-danger-coral) 72%, transparent);
+  background: color-mix(in oklch, var(--color-danger-coral) 10%, transparent);
+  color: var(--color-danger-coral);
+}
+
+.options-danger-action:hover {
+  border-color: var(--color-danger-coral);
+}
+
+.options-remove-confirm {
+  border-color: color-mix(in oklch, var(--color-danger-coral) 72%, transparent);
+  background: color-mix(in oklch, var(--color-danger-coral) 8%, var(--color-surface));
+}
+
+.options-notice-success {
+  color: var(--color-success);
+}
+
+.options-notice-error {
+  color: var(--color-danger-coral);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
